@@ -2,6 +2,7 @@ package Shape;
 
 public interface Shape 
 {
-	public abstract double perimeter();
-	public abstract double area();
+	public abstract double calculatePerimeter();
+	public abstract double calculateArea();
+	public abstract String toString();	
 }

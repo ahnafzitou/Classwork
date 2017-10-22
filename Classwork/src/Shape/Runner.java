@@ -2,33 +2,43 @@ package Shape;
 
 public class Runner 
 {
-	public static void main(String[] args)
-	{
-		Rectangle rectangle1 = new Rectangle(3.14,1);
-		Circle circle1 = new Circle(1);
-		if(rectangle1.perimeter() > circle1.perimeter())
-		{
-			System.out.println("Rectangle has larger perimeter");
-		}
-		if(rectangle1.area() > circle1.area())
-		{
-			System.out.println("Rectangle has larger area");
-		}
-		if(circle1.perimeter() > rectangle1.perimeter())
-		{
-			System.out.println("Circle has larger perimeter");
-		}
-		if(circle1.area() > rectangle1.area())
-		{
-			System.out.println("Circle has larger area");
-		}
-		if(circle1.area() == rectangle1.area())
-		{
-			System.out.println("Same area");
-		}
-		if(circle1.perimeter() == rectangle1.perimeter())
-		{
-			System.out.println("Same perimeter");
-		}
-	}
+	public static void main (String[] args)
+    {
+        Shape circle1 = new Circle(3);
+        Shape rectangle1 = new Rectangle(10, 4);
+        Shape square1 = new Square(10);
+
+        System.out.println("First test out the hard coded shape arraay.\n\n");
+        Shape [] shapeArr = {circle1, rectangle1, square1};
+        
+        for (Shape shape : shapeArr)
+        {
+        	System.out.println(shape);
+        }
+        System.out.println("\nDid the three shapes above add up to the total printed here?\n");
+        System.out.println("Total Area: " + Shapeutilities.sumArea(shapeArr)); //168.26
+        System.out.println("Total Perimeter: " + Shapeutilities.sumPerimeter(shapeArr)); //86.84
+        System.out.println("\nDid the three shapes above add up to the total printed here?\n");
+
+
+        
+        System.out.println("\n\n Now testing the random array.\n");
+
+        shapeArr = new Shape[10];
+        
+        //Why are we using a for loop instead of a for-each loop here?
+        for (int i = 0; i < shapeArr.length; i++)
+        {
+            shapeArr[i] = Shapeutilities.getRandomShape();
+        }
+
+        for (Shape shape : shapeArr)
+        {
+            System.out.println(shape);
+        }
+
+        System.out.println("\nTotal Area: " + Shapeutilities.sumArea(shapeArr));
+        System.out.println("Total Perimeter: " + Shapeutilities.sumPerimeter(shapeArr));
+
+    }
 } 

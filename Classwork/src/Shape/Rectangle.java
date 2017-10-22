@@ -2,20 +2,27 @@ package Shape;
 
 public class Rectangle implements Shape 
 {
-	private double length;
+	private double height;
 	private double width;
-	public Rectangle(double length,double width)
+	public double calculateArea() 
 	{
-		this.length = length;
-		this.width = width;
-	}
-	public double perimeter()
+       return height*width;
+    }
+
+    @Override
+    public double calculatePerimeter() 
+    {
+        return (height*2)+(width*2);
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Rectangle width " + width + " height " + height + " area " + this.calculateArea() + " Perimeter: " + this.calculatePerimeter();
+    }
+	 public Rectangle(int height, int width) 
 	{
-		return (length * 2 + width *2);
+	        this.height = height;
+	        this.width = width;
 	}
-	public double area()
-	{
-		return (length * width);
-	}
-	
 }
