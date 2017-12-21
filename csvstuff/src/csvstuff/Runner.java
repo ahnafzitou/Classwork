@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.io.File;
 
 public class Runner {
-	public static void main(String[] argsssss) throws IOException
+	public static void main(String[] args) throws IOException
 	{	
 		File CVS = new File("data.csv");
-		CSVUtilities potato =  new CSVUtilities(CVS); 
+		CSVUtilities x =  new CSVUtilities(CVS); 
 		
-		ArrayList<String> yes = new ArrayList<String>();
-		yes = (ArrayList<String>) potato.getColumnData(5);
-		potato.getColumnData(5);
+		ArrayList<String> z = new ArrayList<String>();
+		z = (ArrayList<String>) x.getColumnData(5);
+		x.getColumnData(5);
 	}
 }
