@@ -16,7 +16,7 @@ public class CSVUtilities
 	public CSVUtilities(File csv) throws IOException
 	{
 		boolean toggle = true;
-		ArrayList<String> yes = new ArrayList<String>();
+		ArrayList<String> no = new ArrayList<String>();
 		Path pathToFile = Paths.get(csv.getAbsolutePath());
 		BufferedReader buff = Files.newBufferedReader(pathToFile);
 		String line = buff.readLine();
@@ -33,74 +33,74 @@ public class CSVUtilities
 			} 
 			if (attributes != null) {
 				for (String x : attributes) {
-					yes.add(x);
+					no.add(x);
 				} 
 			}
 		}
-		this.CSVData = yes;
+		this.CSVData = no;
 	}
 	
 	public List<String> getColumnHeaders()
 	{
-		ArrayList<String> yes = new ArrayList<String>();
+		ArrayList<String> no = new ArrayList<String>();
 		for(int i = 0; i < numColumn; i++)
 		{
-			yes.add(CSVData.get(i));
+			no.add(CSVData.get(i));
 		}
-		return yes;
+		return no;
 	}
 	
 	public List<String> getColumnData(int column)
 	{
-		ArrayList<String> yes = new ArrayList<String>();
+		ArrayList<String> no = new ArrayList<String>();
 		for(int i = column; i < this.CSVData.size(); i = i + numColumn)
 		{	String x = CSVData.get(i);
 			if(!(x.equals("")))
 			{
-				yes.add(CSVData.get(i));
+				no.add(CSVData.get(i));
 			}
 			else
 			{
-				yes.add("NULL");
+				no.add("NULL");
 			}
 		}
-		return yes;
+		return no;
 	}
 	
 	public List<Integer> getDataInt(int column)
 	{
-		ArrayList<Integer> yes = new ArrayList<Integer>();
+		ArrayList<Integer> no = new ArrayList<Integer>();
 		for(int i = column; i < this.CSVData.size(); i = i + numColumn)
 		{
 			String x =(CSVData.get(i));
 			if(!(x.equals("")))
 			{
-				yes.add(Integer.parseInt(x));
+				no.add(Integer.parseInt(x));
 			}
 			else
 			{
-				yes.add(null);
+				no.add(null);
 			}
 		}
-		return yes;
+		return no;
 	}
 	
 	public List<Double> getDataDouble(int column)
 	{
-		ArrayList<Double> yes = new ArrayList<Double>();
+		ArrayList<Double> no = new ArrayList<Double>();
 		for(int i = column; i < this.CSVData.size(); i = i + numColumn)
 		{
 			String x =(CSVData.get(i));
 			if(!(x.equals("")))
 			{
-				yes.add(Double.parseDouble(x));
+				no.add(Double.parseDouble(x));
 			}
 			else
 			{
-				yes.add(null);
+				no.add(null);
 			}
 		}
-		return yes;
+		return no;
 	}
 
 }
