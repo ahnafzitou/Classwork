@@ -23,9 +23,11 @@ public class DataVisualizer extends Application {
         final NumberAxis yAxis = new NumberAxis();
         xAxis.setLabel("Platform");
         final LineChart<Number,Number> lineChart = new LineChart<Number,Number>(xAxis,yAxis);
-        lineChart.setTitle("Social Media Usage, 2017");
+        lineChart.setTitle("Social Media Usage by New York Government Offices");
         XYChart.Series series = new XYChart.Series();
         series.setName("My portfolio");
+        File CVS = new File("data.csv");
+		CSVUtilities theCVS =  new CSVUtilities(CVS);
         
         series.getData().add(new XYChart.Data(1, 23));
         series.getData().add(new XYChart.Data(2, 14));
